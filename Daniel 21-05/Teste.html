@@ -1,130 +1,340 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aprendendo a usar o GitHub</title>
+ LU
+    <title>Livraria Encantos</title>
+
 
     <style>
-        /* RESET */
+
         * {
             margin: 10;
             padding: 10;
             box-sizing: border-box;
         }
 
-        /* BODY */
         body {
             font-family: Arial, Helvetica, sans-serif;
             background-color: #f4f4f4;
             color: #333;
         }
 
-        /* HEADER */
         header {
-            background-color: #111;
+            background: linear-gradient(90deg, #4b0082, #6a0dad);
             color: white;
-            padding: 20px;
+            padding: 25px;
             text-align: center;
         }
 
-        /* NAV */
+        header h1 {
+            font-size: 40px;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
         nav {
-            background-color: #222;
-            padding: 10px;
+            background-color: #2d004d;
+            padding: 15px;
             text-align: center;
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            margin: 0 15px;
+            margin: 0 20px;
+            font-weight: bold;
             transition: 0.3s;
         }
 
         nav a:hover {
-            color: #00bfff;
+            color: #ffd700;
         }
 
-        /* MAIN */
-        main {
-            max-width: 1000px;
-            margin: 30px auto;
+        .banner {
+            background-image: url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1400&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            height: 350px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .banner-text {
+            background-color: rgba(0,0,0,0.6);
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .banner h2 {
+            font-size: 42px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
             padding: 20px;
         }
 
-        /* CARD */
+        .titulo-secao {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 32px;
+            color: #4b0082;
+        }
+
+        .livros {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
         .card {
             background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            transition: 0.3s;
         }
 
-        /* BUTTON */
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            color: #4b0082;
+        }
+
+        .preco {
+            color: #00a86b;
+            font-size: 22px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
         button {
-            background-color: #00bfff;
+            width: 100%;
+            background-color: #4b0082;
             color: white;
             border: none;
-            padding: 12px 20px;
-            border-radius: 6px;
+            padding: 12px;
+            border-radius: 8px;
             cursor: pointer;
+            font-size: 16px;
             transition: 0.3s;
         }
 
         button:hover {
-            background-color: #0099cc;
+            background-color: #6a0dad;
         }
 
-        /* FOOTER */
+        .sobre {
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            margin-top: 50px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            line-height: 1.8;
+        }
+
+        .contato {
+            margin-top: 50px;
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+
+        .contato input,
+        .contato textarea {
+            width: 100%;
+            padding: 14px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
         footer {
-            background-color: #111;
+            background-color: #2d004d;
             color: white;
             text-align: center;
-            padding: 15px;
-            margin-top: 40px;
+            padding: 20px;
+            margin-top: 50px;
         }
+
+        .contador {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #4b0082;
+            color: white;
+            padding: 15px;
+            border-radius: 50px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            font-weight: bold;
+        }
+
+        @media(max-width: 768px){
+
+            header h1 {
+                font-size: 30px;
+            }
+
+            .banner h2 {
+                font-size: 28px;
+            }
+
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+
+        }
+
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Bem-Vindos ao site</h1>
-        <p>Eduardo - ATV</p>
+ LU
+        <h1>📚 Livraria Encantos</h1>
+        <p>Os melhores livros para você mergulhar em novas histórias</p>
     </header>
 
     <nav>
-        <a href="#">Início</a>
-        <a href="#">Sobre</a>
-        <a href="#">Contato</a>
+        <a href="#inicio">Início</a>
+        <a href="#livros">Livros</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
     </nav>
 
-    <main>
+    <section class="banner" id="inicio">
+        <div class="banner-text">
+            <h2>Descubra o mundo através da leitura</h2>
+            <p>Promoções especiais todos os dias</p>
+        </div>
+    </section>
 
-        <section class="card">
-            <h2>Título da seção</h2>
+    <main class="container">
+
+        <h2 class="titulo-secao" id="livros">Livros em Destaque</h2>
+
+        <section class="livros">
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=1200&auto=format&fit=crop">
+
+                <div class="card-content">
+                    <h3>O Poder do Hábito</h3>
+                    <p>Um livro incrível sobre comportamento e produtividade.</p>
+                    <div class="preco">R$ 49,90</div>
+                    <button onclick="comprarLivro('O Poder do Hábito')">Comprar</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=1200&auto=format&fit=crop">
+
+                <div class="card-content">
+                    <h3>Dom Casmurro</h3>
+                    <p>Um clássico da literatura brasileira de Machado de Assis.</p>
+                    <div class="preco">R$ 35,90</div>
+                    <button onclick="comprarLivro('Dom Casmurro')">Comprar</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?q=80&w=1200&auto=format&fit=crop">
+
+                <div class="card-content">
+                    <h3>Harry Potter</h3>
+                    <p>Uma aventura mágica que marcou gerações.</p>
+                    <div class="preco">R$ 59,90</div>
+                    <button onclick="comprarLivro('Harry Potter')">Comprar</button>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="sobre" id="sobre">
+            <h2 class="titulo-secao">Sobre a Livraria</h2>
+
             <p>
-                Aqui você pode começar a montar seu conteúdo.
+                A Livraria Encantos foi criada com o objetivo de incentivar a leitura e aproximar pessoas de histórias inesquecíveis.
+                Trabalhamos com livros de romance, fantasia, desenvolvimento pessoal, ficção, suspense e muito mais.
             </p>
 
             <br>
 
-            <button>Clique aqui</button>
+            <p>
+                Nosso site foi desenvolvido utilizando HTML5, CSS3 e JavaScript, com foco em responsividade, design moderno e experiência do usuário.
+            </p>
         </section>
 
-        <section class="card">
-            <h2>Outra seção</h2>
-            <p>
-                Você pode duplicar cards e ir criando layouts.
-            </p>
+        <section class="contato" id="contato">
+
+            <h2 class="titulo-secao">Contato</h2>
+
+            <input type="text" placeholder="Seu nome">
+            <input type="email" placeholder="Seu e-mail">
+            <textarea rows="5" placeholder="Digite sua mensagem"></textarea>
+
+            <button onclick="enviarMensagem()">Enviar Mensagem</button>
+
         </section>
 
     </main>
 
+    <div class="contador" id="contadorCarrinho">
+        🛒 Carrinho: 0
+    </div>
+
     <footer>
-        <p>© 2026 - Meu Projeto</p>
+        <p>© 2026 - Livraria Encantos | Todos os direitos reservados</p>
     </footer>
+
+    <script>
+
+        let carrinho = 0;
+
+        function comprarLivro(nomeLivro) {
+            carrinho++;
+
+            document.getElementById('contadorCarrinho').innerHTML =
+            '🛒 Carrinho: ' + carrinho;
+
+            alert(nomeLivro + ' foi adicionado ao carrinho!');
+        }
+
+        function enviarMensagem() {
+            alert('Mensagem enviada com sucesso!');
+        }
+
+        console.log('Site da Livraria carregado com sucesso!');
+
+    </script>
 
 </body>
 </html>
+ LU
+```
